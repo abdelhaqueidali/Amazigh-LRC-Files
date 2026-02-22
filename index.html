@@ -130,10 +130,9 @@
 <body>
 
     <div class="search-container" id="search-container">
-            	</p>
+    	</p>
 <a href="contribute.html">MusixMatch Contribution</a>
     </p>
-        
         <input type="text" id="search-input" class="search-box" placeholder="Search lyrics..." autocomplete="off">
         <div class="options">
             <label>
@@ -172,7 +171,7 @@
         async function fetchFileContent(filename) {
             if (fileContentsCache[filename]) return fileContentsCache[filename];
             try {
-                const response = await fetch(`lyrics/${filename}`);
+                const response = await fetch(`lyrics/${filename}`); //Directory of Lyrics ***
                 if (!response.ok) return "";
                 const text = await response.text();
                 fileContentsCache[filename] = text;
@@ -182,7 +181,6 @@
             }
         }
 
-        function stripLrcTags(text) {
                 function stripLrcTags(text) {
             if (!text) return "";
             return text.split(/\r?\n/)

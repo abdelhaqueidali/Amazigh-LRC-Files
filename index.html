@@ -168,7 +168,7 @@
         async function fetchFileContent(filename) {
             if (fileContentsCache[filename]) return fileContentsCache[filename];
             try {
-                const response = await fetch(`${filename}`);
+                const response = await fetch(`lyrics/${filename}`);
                 if (!response.ok) return "";
                 const text = await response.text();
                 fileContentsCache[filename] = text;
